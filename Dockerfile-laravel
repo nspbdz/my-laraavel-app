@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
 # Menginstall Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+
 # Expose port jika diperlukan (tidak diperlukan untuk PHP-FPM)
 # EXPOSE 9000
 

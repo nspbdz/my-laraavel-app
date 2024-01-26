@@ -9,6 +9,11 @@ services:
 
   nginx:
     image: 434c8686327751f38f7a8702cab34ddbcf2807bfc4f3733245d5f324c56cf052  # Sesuaikan dengan nama gambar dan tag yang sesuai di sistem lokal Anda
+    volumes:
+      - ./fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
+      - ./nginx-config:/etc/nginx
+      - ./laravel-app:/var/www/html
+
     ports:
       - "8080:80"
     depends_on:

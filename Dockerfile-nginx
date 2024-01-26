@@ -1,5 +1,9 @@
 FROM nginx:latest
 
+# fastcgi
+# COPY ./fastcgi-php.conf /etc/nginx/snippets/fastcgi-php.conf
+
+
 # Menyalin konfigurasi Nginx
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/laravel.conf /etc/nginx/conf.d/default.conf
