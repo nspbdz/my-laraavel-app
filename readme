@@ -1,0 +1,2 @@
+
+  image: my-laravel-app-laravel-app:latest  # Sesuaikan dengan nama gambar dan tag yang sesuai untuk cek images nya di docker images

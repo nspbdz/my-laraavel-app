@@ -1,0 +1,24 @@
+version: '3'
+services:
+  laravel-app:
+    build:
+      context: .
+      dockerfile: Dockerfile-laravel
+    volumes:
+      - ./laravel-app:/var/www/html
+    networks:
+      - laravel-network
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - laravel-app
+    networks:
+      - laravel-network
+
+networks:
+  laravel-network:

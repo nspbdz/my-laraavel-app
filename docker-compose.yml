@@ -1,0 +1,21 @@
+version: '3'
+services:
+  laravel-app:
+    image: 5caea1f603ed9dba002107bfbb340c539fa73b7005e4b6fab03c38d75e9279f5  # Sesuaikan dengan nama gambar dan tag yang sesuai di sistem lokal Anda
+    volumes:
+      - ./laravel-app:/var/www/html
+    networks:
+      - laravel-network
+
+  nginx:
+    image: 434c8686327751f38f7a8702cab34ddbcf2807bfc4f3733245d5f324c56cf052  # Sesuaikan dengan nama gambar dan tag yang sesuai di sistem lokal Anda
+    ports:
+      - "8080:80"
+    depends_on:
+      - laravel-app
+    networks:
+      - laravel-network
+
+networks:
+  laravel-network:
+    driver: bridge
